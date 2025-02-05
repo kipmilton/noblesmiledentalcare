@@ -1,0 +1,81 @@
+{% load static %}
+<footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Noble Smiles Dental Care</span>
+          </a>
+          <p>Your smile is our priority. We offer expert dental care to help you achieve optimal oral health.</p>
+          <div class="footer-contact pt-3">
+            <p>Royal Square, 6th Floor, Ngong Road</p>
+            <p>Nairobi, Kenya</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+254757186677</span></p>
+            <p><strong>Email:</strong> <span>noblesmilesdentalcare@gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.facebook.com/noblesmilesdentalcare/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/noblesmilesdentalcare/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://ke.linkedin.com/in/noble-smiles-dental-care-7688a221a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+            </a>
+        </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#about">About Us</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#services">Our Services</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#pricing">Insurance & Payments</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="{% url 'thee_app:home_page' %}#tabs">General Dentistry</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#tabs">Teeth Whitening</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#tabs">Orthodontics (Braces & Aligners)</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#tabs">Dental Implants</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#tabs">Pediatric Dentistry</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Specialized Care</h4>
+          <ul>
+            <li><a href="{% url 'thee_app:home_page' %}#services">Cosmetic Dentistry</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#services">Root Canal Treatment</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#services">Gum Disease Treatment</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#services">Oral Surgery</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#services">Emergency Dental Care</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Branches</h4>
+          <ul>
+            <li><a href="{% url 'thee_app:home_page' %}#contact">Nairobi CBD - Main</a></li>
+            <li><a href="{% url 'thee_app:home_page' %}#contact">Mukuru Kwa Njenga</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Noble Smiles Dental Care</strong>. <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://kipmilton.github.io/myportfolio/#">Milton Kiprop</a>
+      </div>
+    </div>
+
+</footer>

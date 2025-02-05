@@ -1,0 +1,661 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block Content %}
+
+
+<body class="index-page">
+
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-2.jpg' %}" alt="">
+          <div class="container">
+            <h2>Welcome to Noble Smiles Dental Care</h2>
+            <p>Welcome to Noble Smile Dental Care, where your smile is our passion! Founded by the highly esteemed Dr. Duncan Sangura—an expert with over a decade of experience—our clinic has transformed countless smiles with precision and care. Let us bring out the best in yours!</p>
+            <a href="{% url 'thee_app:home_page' %}#about" class="btn-get-started">Read More</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-1.jpg' %}" alt="">
+          <div class="container">
+            <h2>Noble Smiles Dental Care Branches</h2>
+            <p>Expanding smiles, expanding care! Noble Smile Dental Care proudly serves you beyond our main branch, with a fully-equipped satellite clinic in Mukuru Kwa Njenga. Quality dental care is now closer than ever—because everyone deserves a healthy, radiant smile!</p>
+            <a href="{% url 'thee_app:home_page' %}#about" class="btn-get-started">Read More</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-3.jpg' %}" alt="">
+          <div class="container">
+            <h2>Morden Dental equipments</h2>
+            <p>Cutting-edge technology for world-class smiles! At Noble Smile Dental Care, we invest in state-of-the-art equipment for precise diagnosis and painless treatments. Our advanced tools ensure you get the best care possible—because you deserve nothing less than excellence!</p>
+            <a href="{% url 'thee_app:home_page' %}#about" class="btn-get-started">Read More</a>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+
+    <!-- Featured Services Section --> 
+<section id="services" class="featured-services section">
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-tooth icon"></i></div>
+          <h4><a href="{% url 'thee_app:home_page' %}#pricing" class="stretched-link">Comprehensive Dental Care</a></h4>
+          <p>Maintain a healthy smile with expert check-ups, professional cleanings, and cavity treatments for all ages.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-smile icon"></i></div>
+          <h4><a href="{% url 'thee_app:home_page' %}#pricing" class="stretched-link">Teeth Whitening</a></h4>
+          <p>Get a brighter, whiter smile with our safe and effective professional teeth whitening services.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-teeth-open icon"></i></div>
+          <h4><a href="{% url 'thee_app:home_page' %}#pricing" class="stretched-link">Dental Implants & Restorations</a></h4>
+          <p>Restore missing teeth with high-quality implants, crowns, and bridges for a confident smile.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-teeth-align-center icon"></i></div>
+          <h4><a href="{% url 'thee_app:home_page' %}#pricing" class="stretched-link">Braces & Clear Aligners</a></h4>
+          <p>Achieve perfectly aligned teeth with our advanced orthodontic treatments, including metal braces and invisible aligners.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Featured Services Section -->
+
+
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section accent-background">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>In an emergency? Need help now? <br>Dial +254757186677</h3>
+              <p>Make a call to our toll free line. No an urgent issue? Make an appointment now by clicking the button below.</p>
+              <a class="cta-btn" href="appointment">Make an Appointment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- About Section --> 
+<section id="about" class="about section">
+
+  <div class="container">
+
+    <div class="row gy-4">
+      <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+        <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+        <a href="https://www.facebook.com/reel/1136115078138406" class="glightbox pulsating-play-btn"></a>
+      </div>
+      <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+        <h3>Everything You Need to Know About Noble Smiles Dental Care</h3>
+        <p class="fst-italic">
+          Noble Smiles Dental Care is a premier dental clinic based in Nairobi, Kenya, dedicated to transforming smiles with expert care and advanced technology.
+        </p>
+        <ul>
+          <li><i class="bi bi-check2-all"></i> <span>We have two fully operational branches in Nairobi, offering top-tier dental services.</span></li>
+          <li><i class="bi bi-check2-all"></i> <span>Our team of experienced dentists provides personalized treatments tailored to your needs.</span></li>
+          <li><i class="bi bi-check2-all"></i> <span>We specialize in general dentistry, cosmetic dentistry, orthodontics, and advanced dental procedures.</span></li>
+        </ul>
+        <p>
+          At Noble Smiles Dental Care, we are committed to excellence in dental health. From routine check-ups to smile makeovers, our modern clinics are equipped with cutting-edge technology to ensure precise diagnosis and effective treatments. Your smile is our priority!
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /About Section -->
+
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-user-md flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="16" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Dentist</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="far fa-hospital flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Departments</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-flask flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Branches</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-award flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="52" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Awards</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    
+
+    <!-- Tabs Section --> 
+<section id="tabs" class="tabs section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Departments</h2>
+    <p>Providing expert dental care to help you achieve a healthier and more confident smile.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row">
+      <div class="col-lg-3">
+        <ul class="nav nav-tabs flex-column">
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tabs-tab-1">General Dentistry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-2">Cosmetic Dentistry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-3">Orthodontics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-4">Teeth Whitening</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-5">Dental Implants</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-9 mt-4 mt-lg-0">
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tabs-tab-1">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>General Dentistry</h3>
+                <p class="fst-italic">Comprehensive dental care for individuals and families, ensuring optimal oral health.</p>
+                <p>We provide routine check-ups, cleanings, fillings, and preventive treatments to keep your teeth and gums in perfect condition. Our expert dentists focus on early diagnosis and personalized care for long-term oral health.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tabs-tab-2">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Cosmetic Dentistry</h3>
+                <p class="fst-italic">Transform your smile with our advanced cosmetic dental treatments.</p>
+                <p>Whether you need veneers, bonding, or full smile makeovers, we offer cutting-edge cosmetic solutions to enhance the appearance of your teeth while maintaining natural aesthetics.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tabs-tab-3">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Orthodontics</h3>
+                <p class="fst-italic">Achieve a straighter, more aligned smile with our orthodontic solutions.</p>
+                <p>We offer traditional braces, clear aligners, and retainers to help you achieve perfect alignment and improve your bite. Our specialists create personalized treatment plans to fit your needs.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tabs-tab-4">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Teeth Whitening</h3>
+                <p class="fst-italic">Brighten your smile with our safe and effective whitening treatments.</p>
+                <p>We use professional-grade whitening techniques to remove stains and discoloration, giving you a whiter and more confident smile in just one session.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tabs-tab-5">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>Dental Implants</h3>
+                <p class="fst-italic">Restore missing teeth with high-quality, long-lasting dental implants.</p>
+                <p>Our implant specialists offer durable and natural-looking solutions to replace lost teeth, restoring function and aesthetics to your smile.</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                <img src="assets/img/departments-5.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /Tabs Section -->
+
+
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="doctors section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Doctors</h2>
+        <p>Below are our well trained Dentist who are always happy to make you smile.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dr. Duncan Sangura</h4>
+                <span>Chief Dental Officer</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dr. Mary Ann</h4>
+                <span>Oral specialist</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dr. Hesron Kibet</h4>
+                <span>General Dentist</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Dr. Abdala Kiptoo</h4>
+                <span>Dentist</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Doctors Section -->
+
+    
+
+    <!-- Pricing Section -->
+<section id="pricing" class="pricing section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Pricing</h2>
+    <p>Below are some of our dental services at a fee.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row gy-3">
+
+      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-item">
+          <h3>General</h3>
+          <h4><sup>Ksh.</sup>500<span> / Visit</span></h4>
+          <ul>
+            <li>Dental Check-up</li>
+            <li>Oral Health Consultation</li>
+            <li class="na">Teeth Cleaning</li>
+            <li class="na">Tooth Extraction</li>
+            <li class="na">Braces Consultation</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="appointment" class="btn-buy">Make an appointment</a>
+          </div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="pricing-item featured">
+          <h3>Student</h3>
+          <h4><sup>Ksh</sup>1000<span> / Visit</span></h4>
+          <ul>
+            <li>Dental Check-up</li>
+            <li>Oral Health Consultation</li>
+            <li class="na">Teeth Whitening</li>
+            <li>Tooth Extraction</li>
+            <li class="na">Braces Adjustment</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="appointment" class="btn-buy">Make an appointment</a>
+          </div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="pricing-item">
+          <h3>SHA Member</h3>
+          <h4><sup>Ksh.</sup>4500<span> / Visit</span></h4>
+          <ul>
+            <li>Dental Check-up</li>
+            <li>Oral Health Consultation</li>
+            <li>Teeth Cleaning</li>
+            <li class="na">Braces Installation</li>
+            <li>Tooth Extraction</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn-buy">Make appointment</a>
+          </div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="pricing-item">
+          <span class="advanced">Advanced</span>
+          <h3>VIP</h3>
+          <h4><sup>Ksh.</sup>10000<span> / Visit</span></h4>
+          <ul>
+            <li>Dental Check-up</li>
+            <li>Oral Health Consultation</li>
+            <li>Teeth Whitening</li>
+            <li>Braces Installation</li>
+            <li>Dental Implants Consultation</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="appointment" class="btn-buy">Make appointment</a>
+          </div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Pricing Section -->
+
+
+    <!-- FAQ Section -->
+<section id="faq" class="faq section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Frequently Asked Questions</h2>
+    <p>Below are some of the commonly asked questions along with their most accurate answers.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row justify-content-center">
+
+      <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="faq-container">
+
+          <div class="faq-item">
+            <h3>What is your mission?</h3>
+            <div class="faq-content">
+              <p>Our mission is to provide quality affordable, and painless dental care, ensuring healthy and confident smiles for all our patients.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End FAQ item -->
+
+          <div class="faq-item">
+            <h3>Where are you located?</h3>
+            <div class="faq-content">
+              <p>We are located at <strong>Royal Square, 6th Floor, along Ngong Road</strong>. We also have a second branch to serve you better.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End FAQ item -->
+
+          <div class="faq-item">
+            <h3>Do you accept insurance cards?</h3>
+            <div class="faq-content">
+              <p>Yes, we accept insurance cards, including SHA, and other recognized providers.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End FAQ item -->
+
+          <div class="faq-item">
+            <h3>What dental services do you offer?</h3>
+            <div class="faq-content">
+              <p>We offer a wide range of dental services, including general check-ups, teeth cleaning, teeth whitening, braces installation, dental fillings, extractions, and implants consultations.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End FAQ item -->
+
+          <div class="faq-item">
+            <h3>What are your operating hours?</h3>
+            <div class="faq-content">
+              <p>Our clinic is open Monday to Saturday from 8:00 AM to 6:00 PM. We are closed on Sundays and public holidays.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End FAQ item -->
+
+          <div class="faq-item">
+            <h3>Do you offer discounts for students?</h3>
+            <div class="faq-content">
+              <p>Yes! We offer a special student package for only Ksh. 500 only for a limited number of services, covering a dental check-up and consultation.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div><!-- End FAQ item -->
+
+        </div>
+
+      </div><!-- End FAQ Column -->
+
+    </div>
+
+  </div>
+
+</section><!-- /FAQ Section -->
+
+
+    <!-- Contact Section -->
+<section id="contact" class="contact section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>We are now open at two of our branches, visit us today at any of our branches and enjoy quality dental services.</p>
+  </div><!-- End Section Title -->
+
+  <!-- Google Maps - Two Column Layout -->
+  <div class="container" data-aos="fade-up" data-aos-delay="200">
+    <div class="row">
+      <div class="col-lg-6">
+        <p>Noble Smiles Dental Care - Main Clinic</p>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7912810844123!2d36.781638474045586!3d-1.3000615356394007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f119744cb3d3f%3A0x508c55251b897323!2sNoble%20Smiles%20Dental%20Care!5e0!3m2!1sen!2ske!4v1738687495744!5m2!1sen!2ske" 
+          width="100%" height="370px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="col-lg-6">
+        <p>Noble Smiles Dental Care -Mkuru Kwa Njenga Branch</p>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.791272609146!2d36.78421340000001!3d-1.3000668999999954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f119744cb3d3f%3A0x508c55251b897323!2sNoble%20Smiles%20Dental%20Care!5e0!3m2!1sen!2ske!4v1738688013942!5m2!1sen!2ske" 
+          width="100%" height="370px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div><!-- End Google Maps -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      <div class="col-lg-6">
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <p>Royal Square, 6th Floor, Along Ngong Road.</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h3>Call Us</h3>
+              <p>+254757186677</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope"></i>
+              <h3>Email Us</h3>
+              <p>noblesmilesdentalcare@gmail.com</p>
+            </div>
+          </div><!-- End Info Item -->
+        </div>
+      </div>
+
+      <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="500">
+        <p><br><br><br><br><br></p>
+        <a href="mailto:noblesmilesdentalcare@gmail.com" class="btn btn-primary btn-lg">CONTACT US</a>
+      </div><!-- End Contact Button -->
+      
+    </div>
+  </div>
+
+</section><!-- /Contact Section -->
+
+
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+{% endblock %}

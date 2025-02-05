@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Upload Proof of Payment{% endblock %}
+
+{% block Content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">Upload Proof of Payment(eg Mpesa screenshot)</h4>
+                </div>
+                <div class="card-body">
+                    {% if messages %}
+                    <div class="message-box">
+                        {% for message in messages %}
+                            <p class="alert {{ message.tags }}">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            {{ form.proof_of_payment.label_tag }}
+                            {{ form.proof_of_payment }}
+                            {% if form.proof_of_payment.errors %}
+                                <div class="text-danger">
+                                    {{ form.proof_of_payment.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Upload</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

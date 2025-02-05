@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Payment {% endblock %}
+
+{% block Content %}
+<div class="payment-container">
+    <h2>Make a Payment</h2>
+
+    <!-- Display messages (success/error) -->
+    {% if messages %}
+        <div class="message-box">
+            {% for message in messages %}
+                <p class="alert {{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- this isayment Form -->
+    <form method="post" action="{% url 'thee_app:stk' %}">
+        {% csrf_token %}
+        
+        <!-- request Phone number -->
+        <div class="form-group">
+            <label class="form-label" for="phone">Phone Number:</label>
+            <input type="number" id="phone" name="phone" value="254" placeholder="Phone Number" class="form-control">
+        </div>
+
+        <!-- Amount -->
+        <div class="form-group">
+            <label class="form-label" for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" placeholder="Amount" class="form-control">
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary">Click to pay and complete your appointment</button>
+    </form>
+</div>
+
+<!-- Inline CSS for the Payment Form Styling -->
+<style>
+    .payment-container {
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Headings */
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    /* form */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .form-control:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    /* Button */
+    .btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    /* success/error messages */
+    .message-box {
+        margin-bottom: 20px;
+    }
+
+    .alert {
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .alert.success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .alert.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Patient's Appointments{% endblock %}
+
+{% block Content %}
+<table class="table table-light table-responsive">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>Phone No.</th>
+            <th>Date Of Visit</th>
+            <th>Department</th>
+            <th>Doctor</th>
+            <th>Message</th>
+            <th>Payment</th>   
+            <th>Actions</th>
+            <th>Status</th>         
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment.name }}</td>
+            <td>{{ appointment.email }}</td>
+            <td>{{ appointment.phone }}</td>
+            <td>{{ appointment.date }}</td>                
+            <td>{{ appointment.department }}</td>
+            <td>{{ appointment.doctor }}</td>
+            <td>{{ appointment.message }}</td>
+            <td>
+                {% if appointment.proof_of_payment %}
+                    <a href="{{ appointment.proof_of_payment.url }}" target="_blank">
+                        View Proof
+                    </a>
+                {% else %}
+                    No Proof Uploaded
+                {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'thee_app:appointment_delete' appointment.id %}" class="btn btn-danger">Delete</a>
+                
+            </td>
+            <td>
+                <!-- Only show this for superusers -->
+                {% if user.is_superuser %}
+                    <form action="{% url 'thee_app:appointment_mark_done' appointment.id %}" method="POST">
+                        {% csrf_token %}
+                        <input type="checkbox" name="status" value="done" {% if appointment.status == 'done' %}checked{% endif %} onchange="this.form.submit()">
+                        Done
+                    </form>
+                {% else %}
+                    {{ appointment.status }}
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
