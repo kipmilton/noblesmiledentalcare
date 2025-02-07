@@ -3,71 +3,71 @@
 {% block title %}Update Appointment{% endblock %}
 
 {% block Content %}
-<!-- Appointment Section -->
-<section id="appointment_update" class="appointment section light-background">
+<!-- Appointment Update Section -->
+<section id="appointment-update" class="appointment section light-background">
 
-    <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>Update Your Appointment</h2>
-        <p>Modify your existing appointment details or schedule a new one with our well-trained doctors.</p>
-    </div><!-- End Section Title -->
+        <h2>UPDATE APPOINTMENT</h2>
+        <p><i>Modify your appointment details below.</i></p><br>
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <form action="{% url 'thee_app:appointment_update' appointment.id %}" method="post" role="form" class="php-email-form">
-            {% csrf_token %}
-            <div class="row">
-                <div class="col-md-4 form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" name="name" class="form-control" id="name" 
-                           value="{{ appointment.name }}" placeholder="Your Name" required>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <form action="{% url 'thee_app:appointment_update' appointment.id %}" method="post" role="form" class="php-email-form">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label for="name">Full name</label>
+                        <input type="text" name="name" class="form-control" id="name" value="{{ appointment.name }}" required>
+                    </div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                        <label for="email">Your email</label>
+                        <input type="email" class="form-control" name="email" id="email" value="{{ appointment.email }}" required>
+                    </div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                        <label for="phone">Your phone number</label>
+                        <input type="tel" class="form-control" name="phone" id="phone" value="{{ appointment.phone }}" required>
+                    </div>
                 </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <label for="email">Your Email</label>
-                    <input type="email" class="form-control" name="email" id="email" 
-                           value="{{ appointment.email }}" placeholder="Your Email" required>
+                <div class="row">
+                    <div class="col-md-4 form-group mt-3">
+                        <label for="date">Select date and time of your visit</label>
+                        <input type="datetime-local" name="date" class="form-control datepicker" id="date" value="{{ appointment.date|date:'Y-m-d\TH:i' }}" required>
+                    </div>
+                    
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                        <label for="department">Department you want to visit</label>
+                        <select class="form-control" name="department" id="department" required>
+                            <option value="" disabled>Select a department</option>
+                            <option value="General Dentistry" {% if appointment.department == "General Dentistry" %}selected{% endif %}>General Dentistry</option>
+                            <option value="Orthodontics" {% if appointment.department == "Orthodontics" %}selected{% endif %}>Cosmetic Dentistry</option>
+                            <option value="Pediatric Dentistry" {% if appointment.department == "Pediatric Dentistry" %}selected{% endif %}>Teeth Whitening</option>
+                            <option value="Periodontics" {% if appointment.department == "Periodontics" %}selected{% endif %}>Dental Implants</option>
+                            <option value="Oral Surgery" {% if appointment.department == "Oral Surgery" %}selected{% endif %}>Oral Surgery</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-md-4 form-group mt-3 mt-md-0">
+                        <label for="doctor">Dentist you want to see</label>
+                        <select class="form-control" name="doctor" id="doctor" required>
+                            <option value="" disabled>Select a dentist</option>
+                            <option value="Dr. Duncan" {% if appointment.doctor == "Dr. Duncan" %}selected{% endif %}>Dr. Duncan Sangura</option>
+                            <option value="Dr. Milton" {% if appointment.doctor == "Dr. Milton" %}selected{% endif %}>Dr. Milton Kiprop</option>
+                            <option value="Dr. Abdala" {% if appointment.doctor == "Dr. Abdala" %}selected{% endif %}>Dr. Abdala Kiptoo</option>
+                            <option value="Dr. Hesron" {% if appointment.doctor == "Dr. Hesron" %}selected{% endif %}>Dr. Hesron Kibet</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <label for="phone">Your Phone Number</label>
-                    <input type="tel" class="form-control" name="phone" id="phone" 
-                           value="{{ appointment.phone }}" placeholder="Your Phone" required>
+                
+                <div class="form-group mt-3">
+                    <label for="message">Reason for your visit</label>
+                    <textarea class="form-control" name="message" rows="5">{{ appointment.message }}</textarea>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4 form-group mt-3">
-                    <label for="date">Select Date and Time of Your Visit</label>
-                    <input type="datetime-local" name="date" class="form-control datepicker" id="date" 
-                           value="{{ appointment.date|date:'Y-m-d\\TH:i' }}" placeholder="Appointment Date" required>
+                <div class="mt-3">
+                    <div class="text-center"><button type="submit">Update Appointment</button></div><br>
+                    <div class="text-center"><a href="{% url 'thee_app:pay' %}" class="btn btn-success">Make a Payment to complete your appointment</a></div>
+                    <div class="sent-message">Your changes have been saved!</div>
                 </div>
-
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <label for="department">Department You Want to Visit</label>
-                    <p>Not sure? <a href="{% url 'thee_app:home_page' %}tabs">view our departments</a></p>
-                    <input type="text" class="form-control" name="department" id="department" 
-                           value="{{ appointment.department }}" placeholder="Department" required>
-                </div>
-
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <label for="doctor">Doctor You Want to See</label>
-                    <p>Not sure? <a href="{% url 'thee_app:homepage' %}doctors">view our doctors page.</a></p>
-                    <input type="text" class="form-control" name="doctor" id="doctor" 
-                           value="{{ appointment.doctor }}" placeholder="Doctor" required>
-                </div>
-            </div>
-
-            <div class="form-group mt-3">
-                <label for="message">Reason for Your Visit</label>
-                <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)">{{ appointment.message }}</textarea>
-            </div>
-
-            <div class="mt-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your appointment has been updated successfully. Thank you!</div>
-                <div class="text-center"><button type="submit">Update Appointment</button></div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</section><!-- /Appointment Section -->
-
+</section>
 {% endblock %}

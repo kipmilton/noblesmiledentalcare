@@ -13,7 +13,7 @@
             <th>Department</th>
             <th>Doctor</th>
             <th>Message</th>
-            <th>Payment</th>   
+            <th>Mpesa Screenshot</th>   
             <th>Actions</th>
             <th>Status</th>         
         </tr>
@@ -31,10 +31,10 @@
             <td>
                 {% if appointment.proof_of_payment %}
                     <a href="{{ appointment.proof_of_payment.url }}" target="_blank">
-                        View Proof
+                        View Screenshot
                     </a>
                 {% else %}
-                    No Proof Uploaded
+                    No Screenshot Uploaded
                 {% endif %}
             </td>
             <td>

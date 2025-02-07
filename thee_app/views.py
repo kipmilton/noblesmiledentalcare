@@ -5,8 +5,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
 import requests
+from django.contrib.auth import logout
 from requests.auth import HTTPBasicAuth
-from thee_app.credentials import LipanaMpesaPpassword, MpesaAccessToken
+# from thee_app.credentials import LipanaMpesaPpassword, MpesaAccessToken
 from .models import Appointment
 from .forms import ContactForm, ProofOfPaymentForm
 from django.core.mail import send_mail
@@ -41,6 +42,11 @@ def appointment_show(request):
 def register(request):
     """Display the reg page"""
     return render(request, "accounts/register.html")
+
+def logout_user(request):
+    """Logs out the user and redirects to login page."""
+    logout(request)
+    return redirect('thee_app:login_page')  # Redirect user after logout
 
 # for updating the status of appointment
 @login_required
