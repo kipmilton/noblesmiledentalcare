@@ -128,10 +128,16 @@
   <div class="container">
 
     <div class="row gy-4">
-      <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-        <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
-        <a href="https://www.facebook.com/reel/1136115078138406" class="glightbox pulsating-play-btn"></a>
-      </div>
+      <!-- Cover Image with Play Button -->
+<div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+  <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+  
+  <!-- Play Button (Opens Video in New Tab) -->
+  <a href="https://www.facebook.com/reel/1136115078138406/" target="_blank" class="pulsating-play-btn">
+      <img src="{% static 'assets/img/play-icon.png' %}" class="play-btn" alt="Play">
+  </a>
+</div>
+
       <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
         <h3>Everything You Need to Know About Noble Smiles Dental Care</h3>
         <p class="fst-italic">
@@ -311,12 +317,12 @@
 
 
 
-    <!-- Doctors Section -->
+    <!-- Dentist Section -->
     <section id="doctors" class="doctors section light-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Doctors</h2>
+        <h2>Dentist</h2>
         <p>Below are our well trained Dentist who are always happy to make you smile.</p>
       </div><!-- End Section Title -->
 
@@ -327,7 +333,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt="">
+                <img src="{% static 'assets/img/doctors/doctors-1.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
@@ -344,7 +350,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt="">
+                <img src="{% static 'assets/img/doctors/doctors-2.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
@@ -361,7 +367,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt="">
+                <img src="{% static 'assets/img/doctors/doctors-3.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -379,7 +385,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt="">
+                <img src="{% static 'assets/img/doctors/doctors-4.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
@@ -397,7 +403,7 @@
 
       </div>
 
-    </section><!-- /Doctors Section -->
+    </section><!-- /Dentist Section -->
 
     
 
