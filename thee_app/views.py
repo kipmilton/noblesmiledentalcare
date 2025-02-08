@@ -7,7 +7,7 @@ from django.contrib import messages
 import requests
 from django.contrib.auth import logout
 from requests.auth import HTTPBasicAuth
-# from thee_app.credentials import LipanaMpesaPpassword, MpesaAccessToken
+from thee_app.credentials import LipanaMpesaPpassword, MpesaAccessToken
 from .models import Appointment
 from .forms import ContactForm, ProofOfPaymentForm
 from django.core.mail import send_mail
