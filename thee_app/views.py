@@ -1,5 +1,5 @@
 import json
-from django.http import HttpResponse, HttpResponseForbidden
+from django.http import HttpResponseForbidden
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
@@ -9,13 +9,10 @@ from django.contrib.auth import logout
 from requests.auth import HTTPBasicAuth
 from thee_app.credentials import LipanaMpesaPpassword, MpesaAccessToken
 from .models import Appointment
-from .forms import ContactForm, ProofOfPaymentForm
-from django.core.mail import send_mail
+from .forms import ProofOfPaymentForm
 #restrict users to login
 from django.contrib.auth.decorators import login_required
-# accounts/views.py
 from django.shortcuts import render, redirect
-from .forms import RegistrationFormm
 
 
 
@@ -92,6 +89,7 @@ def appointment(request):
 
 
 
+@login_required(login_url='thee_app:login_page')
 def appointment_update(request, appointment_id):
     """ Update the appointments """
     # Fetch the appointment
@@ -120,9 +118,9 @@ def appointment_update(request, appointment_id):
 
 
 
+@login_required(login_url='thee_app:login_page')
 def appointment_show(request):
     """ Retrieve/fetch all appointments """
-    # Create a variable to store these appointments
     appointments = Appointment.objects.all()
     context = {
         'appointments':appointments
@@ -130,7 +128,7 @@ def appointment_show(request):
     return render(request, 'appointment_show.html', context)
 
 
-# Delete
+
 def appointment_delete(request, id):
     """ Deleting """
     appointment = Appointment.objects.get(id=id) # fetch the particular appointment by its ID
@@ -174,60 +172,6 @@ def register(request):
             messages.error(request, "Passwords do not match.")
     
     return render(request, 'accounts/register.html')
-
-
-def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            # Retrieve data from the form
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
-
-            # Compose the email
-            email_subject = f"New Contact Form Submission: {subject}"
-            email_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
-            try:
-                send_mail(
-                    email_subject,  
-                    email_message,
-                    email,        
-                    ['kipmilton71@gmail.com'],  
-                )
-                messages.success(request, "Your message has been sent successfully!")
-                form = ContactForm()  
-            except Exception as e:
-                messages.error(request, f"An error occurred: {e}")
-        else:
-            messages.error(request, "Please correct the errors in the form.")
-    else:
-        form = ContactForm()
-
-    return render(request, 'contact.html', {'form': form})
-
-
-
-
-def register3(request):
-    if request.method == 'POST':
-        form = RegistrationFormm(request.POST)
-        if form.is_valid():
-            # Save the data to the database
-            form.save()
-            return redirect('success')  # Redirect to a success page
-    else:
-        form = RegistrationFormm()
-
-    return render(request, 'accounts/register.html', {'form': form})
-
-def success(request):
-    return render(request, 'accounts/success.html')
-
-
-
-
 
 
 # Adding the mpesa functions

@@ -22,12 +22,9 @@ class Appointment(models.Model):
         return f"Appointment for {self.name} with {self.doctor} on {self.date}"
 
 
-
-# accounts/models.py
-
 class UserProfile(models.Model):
     username = models.CharField(max_length=100, unique=True)
-    password = models.CharField(max_length=100)  # You may want to hash this later
+    password = models.CharField(max_length=100)  
     contact_number = models.CharField(max_length=15)
     email = models.EmailField()
     address = models.TextField(null=True, blank=True)

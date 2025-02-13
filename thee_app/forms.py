@@ -1,5 +1,6 @@
 from django import forms
 from .models import Appointment
+from .models import UserProfile
 
 
 class ProofOfPaymentForm(forms.ModelForm):
@@ -15,23 +16,8 @@ class AppointmentForm(forms.ModelForm):
         model = Appointment
         fields = ['name', 'email', 'phone', 'date', 'department', 'doctor', 'message']
 
-class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Your Name'}))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'Your Email'}))
-    subject = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'placeholder': 'Subject'}))
-    message = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Message'}))
 
 
-
-
-
-
-
-
-
-# accounts/forms.py
-from django import forms
-from .models import UserProfile
 
 class RegistrationFormm(forms.ModelForm):
     confirm_password = forms.CharField(widget=forms.PasswordInput())
@@ -50,5 +36,3 @@ class RegistrationFormm(forms.ModelForm):
             raise forms.ValidationError("Passwords do not match")
         
         return cleaned_data
-
-

@@ -3,6 +3,7 @@
 {% block title %}Patient's Appointments{% endblock %}
 
 {% block Content %}
+{% if user.is_superuser %}
 <table class="table table-light table-responsive">
     <thead>
         <tr>
@@ -57,4 +58,8 @@
         {% endfor %}
     </tbody>
 </table>
+{% else %}
+<p>This module is restricted, click "make appointment" to make a new appointment with us!</p>
+
+{% endif %}
 {% endblock %}
