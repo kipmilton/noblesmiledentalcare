@@ -14,7 +14,7 @@ class ProofOfPaymentForm(forms.ModelForm):
 class AppointmentForm(forms.ModelForm): 
     class Meta:
         model = Appointment
-        fields = ['name', 'email', 'phone', 'date', 'department', 'doctor', 'message']
+        fields = ['name', 'email', 'phone', 'date', 'branch', 'department', 'doctor', 'message']
 
 
 
@@ -26,7 +26,7 @@ class RegistrationFormm(forms.ModelForm):
         model = UserProfile
         fields = ['username', 'password', 'contact_number', 'email', 'address']
 
-    # Custom validation for password confirmation
+
     def clean(self):
         cleaned_data = super().clean()
         password = cleaned_data.get('password')

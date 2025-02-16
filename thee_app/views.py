@@ -7,7 +7,7 @@ from django.contrib import messages
 import requests
 from django.contrib.auth import logout
 from requests.auth import HTTPBasicAuth
-from thee_app.credentials import LipanaMpesaPpassword, MpesaAccessToken
+# from thee_app.credentials import LipanaMpesaPpassword, MpesaAccessToken
 from .models import Appointment
 from .forms import ProofOfPaymentForm
 #restrict users to login
@@ -75,6 +75,7 @@ def appointment(request):
             email = request.POST['email'],
             phone = request.POST['phone'],
             date = request.POST['date'],
+            branch = request.POST['branch'],
             department = request.POST['department'],
             doctor = request.POST['doctor'],
             message = request.POST['message'],
@@ -103,6 +104,7 @@ def appointment_update(request, appointment_id):
         appointment.email = request.POST.get('email')
         appointment.phone = request.POST.get('phone')
         appointment.date = request.POST.get('date')
+        appointment.branch = request.POST.GET('branch')
         appointment.doctor = request.POST.get('doctor')
         appointment.department = request.POST.get('department')
         appointment.message = request.POST.get('message')

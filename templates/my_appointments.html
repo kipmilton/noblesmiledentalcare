@@ -10,9 +10,9 @@
             <thead>
                 <tr>
                     <th>Date Of Visit</th>
+                    <th>Branch</th>
                     <th>Department</th>
                     <th>Doctor</th>
-                    <th>Message</th>
                     <th>Action</th>
                     <th>Payment</th>
                     <th>Mpesa screenshot</th>
@@ -23,6 +23,7 @@
                 {% for appointment in appointments %}
                 <tr>
                     <td>{{ appointment.date }}</td>
+                    <td>{{ appointment.branch }}</td>
                     <td>{{ appointment.department }}</td>
                     <td>{{ appointment.doctor }}</td>
                     <td>{{ appointment.message }}</td>

@@ -80,6 +80,15 @@
                             <label for="date">Select date and time of your visit</label>
                             <input type="datetime-local" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" required>
                         </div>
+
+                        <div class="col-md-4 form-group mt-3 mt-md-0">
+                            <label for="department">Branch you want to visit</label>
+                            <select class="form-control" name="branch" id="branch" required>
+                                <option value="" disabled selected>Select a Branch</option>
+                                <option value="Ngong Rd.">Main Branch - Royal Square, 6th Floor, Along Ngong Rd.</option>
+                                <option value="Rongai">Rongai Branch - Stimvac Arcade, Ground Floor.</option>
+                            </select>
+                        </div>
                     
                         <div class="col-md-4 form-group mt-3 mt-md-0">
                             <label for="department">Department you want to visit</label>
@@ -97,10 +106,10 @@
                             <label for="doctor">Dentist you want to see</label>
                             <select class="form-control" name="doctor" id="doctor" required>
                                 <option value="" disabled selected>Select a dentist</option>
-                                <option value="Dr. Duncan">Dr. Duncan Sangura</option>
-                                <option value="Dr. Milton">Dr. Milton Kiprop</option>
-                                <option value="Dr. Abdala">Dr. Abdala Kiptoo</option>
-                                <option value="Dr. Hesron">Dr. Hesron Kibet</option>
+                                <option value="Dr. Duncan">Dr. Duncan Sangura - Ngong Rd.</option>
+                                <option value="Dr. Milton">Dr. Milton Kiprop - Ngong Rd.</option>
+                                <option value="Dr. Abdala">Dr. Abdala Kiptoo - Rongai Branch</option>
+                                <option value="Dr. Hesron">Dr. Hesron Kibet - Rongai Branch</option>
                             </select>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ class Appointment(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=10)
     date = models.DateTimeField()
+    branch = models.CharField(max_length=100, default="general")
     department = models.CharField(max_length=100, default="General")
     doctor = models.CharField(max_length=100, default="General")
     message = models.TextField()
